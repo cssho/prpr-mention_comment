@@ -30,7 +30,7 @@ module Prpr
 
         def comment_body
           comment.body.gsub(REGEXP) { |old|
-            "<" + (members[old] || old) + ">"
+            "<" + (members[old] || (members[old.sub!(/@/, '#')].nil? ? nil : "!subteam^#{members[old.sub!(/@/, '#')]}") || old) + ">"
           }
         end
 
