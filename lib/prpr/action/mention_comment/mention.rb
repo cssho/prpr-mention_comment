@@ -76,6 +76,15 @@ module Prpr
           event.repository.default_branch
         end
       end
+
+      
+      class SubmittedMention < Mention
+        protected
+        def comment
+          puts event.review.body
+          event.review
+        end
+      end
     end
   end
 end
