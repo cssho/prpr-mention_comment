@@ -10,7 +10,7 @@ module Prpr
           end
         end
 
-        private
+        protected
 
         def message
           Prpr::Publisher::Message.new(body: body, from: from, room: room)
